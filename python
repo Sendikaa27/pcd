@@ -1,0 +1,16 @@
+import cv2
+
+path=r'Z:\cyberpunk.jpg';
+
+baca_citra=cv2.imread(path);
+height=baca_citra.shape[0];
+width=baca_citra.shape[1];
+dimension=baca_citra.shape[2];
+
+
+cv2.imshow("ini cyber",baca_citra);
+
+piksel=baca_citra[0][0];
+
+cv2.waitKey(0);
+cv2.destroyAllWindows;
