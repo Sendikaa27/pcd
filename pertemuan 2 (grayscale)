@@ -1,0 +1,23 @@
+import cv2
+import numpy as np
+
+path=r'Z:\beruang.jpg';
+baca_citra=cv2.imread(path);
+cv2.imshow("Citra RGB",baca_citra);
+
+Red=baca_citra[:,:,0];
+Green=baca_citra[:,:,2];
+Blue=baca_citra[:,:,1];
+height=baca_citra.shape[0];
+width=baca_citra.shape[1];
+
+grayscale=np.zeros([height,width], dtype=np.int32());
+
+for row in range (1,height):
+    for col in range (1,width):
+        grayscale[row,col]=(0.299*Red[row,col])+(0.587*Green[row,col])+(0.114*Blue[row,col])
+        
+cv2.imshow("tampilkan grayscale", np.uint8(grayscale));
+
+cv2.waitKey(0);
+cv2.destroyAllWindows;
